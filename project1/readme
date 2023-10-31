@@ -1,0 +1,76 @@
+Objectives
+The goal of this project is to continue to gain familiarity with the process of creating a high-fidelity interactive prototype. Upon completion of this project, the student will have:
+
+Enhanced a high-fidelity prototype
+Practiced the client-side separation of presentation, content, and behavior
+Written functional JavaScript code and used a JS library (jQuery)
+Enabled rich user interaction and dynamic content
+Created a simulated search feature using web forms and JS
+Demonstrated understanding of basic web hosting
+Brief Description
+For this project, you will enhance your high-fidelity prototype using HTML, CSS, and JavaScript. Your prototype will be an iteration and refinement of your Project 2 files.
+
+Details
+Behavior
+Simulated Search Feature
+For this requirement, you will demonstrate your understanding of forms by implementing a simulated search feature. The user should be able to find a search box in the header of at least one of your pages. When the user types in a search phrase and clicks the submit button, they will be redirected to a search results page. If the user typed a certain search keyphrase (defined by you), then the results page will display some simulated search results. Otherwise, the results page will display a friendly error message explaining there are no search results.
+
+The search box should be a proper HTML form with a textbox input element and a submit button. You can use the placeholder attribute for the textbox to suggest the keyphrase the user should type. The form should use the appropriate HTTP request method (GET or POST) and submit the data to the search results page. The search results page should use JavaScript to retrieve the submitted keyphrase and to (using an if or switch statement)) determine whether to display the simulated search results or the friendly error message. To be clear, this is a simulated search feature -- your web app is not actually searching anything.
+
+Additional User Interactions
+Beyond the simulated search feature, your prototype should demonstrate two additional complete user interactions facilitated by JS. What is a complete user interaction? The user should interact with some HTML elements on the page, which causes an event handler to trigger, which selects some other elements of the page, and finally changes those elements by (1) modifying an existing element and (2) adding a new element (i.e. generating a new element where none existed before). For example, a user clicks a "Submit" button which causes a textbox to turn red (modifying existing element) and an error message to appear in a new <div> (adding a new element).
+
+Additional requirements:
+
+Each interaction must use a different JS event type (e.g., click, change, etc.).
+One of the two interactions must use event delegationLinks to an external site..
+One of the two interactions must use DOM traversalLinks to an external site..
+Only one of the two interactions can be form validation.
+You cannot count the class demo/example as one of your interactions. Please do something different.
+General JavaScript Requirements
+The majority of your JavaScript code should be contained in one or more scripts (JS files) linked from all your HTML pages. Embedded scripts are discouraged, but may be justified in some circumstances. Inline scripts are prohibited.
+
+You must use jQuery to help you accomplish each of the above requirements. Do not use only plain JS. You cannot use other Javascript libraries for this assignment. Do not copy scripts from the web; we will be checking for these and it's usually quite obvious. Write all the JS code yourself.
+
+Your JS code should demonstrate your understanding of:
+
+event handling
+user interaction with an element should trigger an event handler
+selection
+efficient traversal of the DOM, selecting the appropriate elements
+dynamic content
+showing, hiding, and/or modifying the UI in response to user behavior
+Test your code in Chrome and Firefox. If it breaks for me in either of these browsers, your grade will suffer.
+
+Web Hosting
+For this requirement, you will demonstrate your understanding of basic web hosting. All CS graduate students are allocated free web space at people.cs.vt.edu to create a personal website. You should create a directory called cs5774 and, within it, a subdirectory called project3. Put your project files inside this directory and ensure everything still works -- hyperlinks, images, external CSS and JS files, etc. In particular, ensure you don't have any absolute file paths that could break when the code is relocated. Please name your home page index.html so that anyone visiting the project3 directory will be automatically redirected to your home page. 
+
+Documentation
+Similar to previous projects, for this project you will include a summary document with your submission in PDF format.
+
+The first part of the document will set up the context for your web app: what's the overall purpose, who is the intended audience, what are the main actions a user can do. (max 1 page)
+The second part will briefly describe how you fulfilled the major requirements above, especially if they are not obvious. This section is also a place to defend any deviations you made from the requirements. Please include your simulated search keyphrase and the URL to your web-hosted project3 folder here. (max 1 page)
+Please use the HTML filenames to clearly indicate each required page. For example, home.html, list.html, etc.
+
+Since this is a programming project, you should use good software engineering practices. Comment your code, use consistent formatting, use meaningful variable names, etc.
+
+Grading
+This is an individual project. You should create your high-fidelity prototype entirely on your own.
+
+Your project will be graded based on how well it meets the specifications above.
+
+30 pts will be based on the functional requirements of the simulated search feature
+30 pts will be based on the functional requirements of the two additional user interactions (15 each)
+10 pts will be based on the functional requirements of the web hosting
+25 pts will be based on code quality, including comments
+5 pts will be based on documentation in your summary document (PDF)
+Note the due date for the project. Late work will be penalized as described in the syllabus.
+
+Submission
+Please submit the following to Canvas: 
+
+A single .zip file named your-name-your-PID.zip (e.g., john-smith-jsmith.zip) containing:
+all your HTML pages with appropriate file names, e.g., list.html, detail.html, etc. 
+CSS stylesheet file(s)
+JS script files(s)
+Your summary document (PDF) outside the .zip file, so we can read it inside Canvas. Don't forget to include in this document the URL to your web-hosted project!

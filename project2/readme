@@ -1,0 +1,83 @@
+Objectives
+The goal of this project is to provide experience developing an MVC-based web application. Upon completion of this project, the student will have:
+
+transitioned static web pages into a dynamic web framework
+designed and implemented semantic, RESTful URLs
+used a template engine to separate the view and controller using the MVC pattern
+used sessions to provide customized user experiences and secure content
+Brief Description
+Your app will implement an MVC framework (minus the database) with support for the following operations:
+
+a list view that shows all the records in the system
+a detail view that shows a single record in detail
+an edit view that allows to change a record
+a create view that allows adding a record to the system
+there is some form of user account to protect the create/edit pages
+You will continue and extend your work from Projects 1-3, creating new pages and designs as needed. The theme of this project, as with the previous ones, is defined by you.
+
+Third-party front-end frameworks such as Bootstrap and Foundation, as well as other JS libraries, are generally allowed for this project. However, you must mention in the summary doc any external libraries you use besides JQuery. Third-party back-end frameworks are not allowed, since a major component of this project is demonstrating you can design and implement such a framework.
+
+Details
+MVC Architecture
+You should use Django and Python for your web framework. Your site should demonstrate a good understanding of MVC principles, with the model, view, and controller appropriately separated as much as possible.
+
+We will not be using a database for this project. Instead, you should create a class for your data items in models.py, import the data into your views, and dynamically load the data into your templates. This will allow you to demonstrate the MVC separation.
+
+User Accounts
+Define two accounts, a regular user and an "admin" user. These credentials should be provided in the summary document. For now, they will be hard-coded.
+
+Views and Templates
+Your application should have the following views, with a reasonable navigation system to get between them and around the site:
+
+Home view
+where the overall purpose of the site is explained. For logged-out users, this page will serve as an advertisement to convince users to sign up. For logged-in users, this page will serve as more of a dashboard.
+List view
+where a listing of all the key items is shown.
+Detail view
+where details for one key item are displayed. Must use GET method to retrieve this item.
+Add view
+where a user adds a new item. Must use POST method to submit the form. This view is accessible only if the user is logged in.
+Edit view
+where a user sees an editable view of an item and can make changes to it. Must use GET method to retrieve the editable data and POST method to submit the form. This view is accessible only if the user is logged in.
+Delete view
+a view where a user can delete an item. This can be as simple as a "delete" button within another view. There should be a delete confirmation. If the user says "Yes" the deletion proceeds. If the user says "No" it is cancelled. Must use POST or DELETE method. Only the "admin" user should see this view.
+Additionally, at least one page must allow the user to log in, to give them access to the add / edit / delete options. The login should use the POST method for security reasons. You should also provide a log-out function in a conspicuous place on every page.
+
+When implementing these templates in Django, you should create a base.html template, and then use extends and block/endblock to inherit the base template in your more specific templates.
+
+Sessions
+When your user logs in with the correct credentials, you should use a Django session to keep track of their log in. Once the user is logged in, their username should appear in a conspicuous place on every page.
+
+You should follow security best practices and use the session for identification rather than authentication (i.e., don't store the password). Access-controlled features and pages should check the session ID to determine access. Logging out should end the session.
+
+Since we have not yet implemented the database/model, you should use file-based sessionsLinks to an external site. for this project.
+
+URLs
+Use a sensible URL scheme that matches the RESTful approach. The URLs should be semantic and meaningful, including for any data processing pages.
+
+Documentation
+Similar to previous projects, for this project you will include a summary document with your submission in PDF format.
+
+The first part of the document will set up the context for your web app: what's the overall purpose, who is the intended audience, what are the main actions a user can do. Don't forget the credentials for your 2 users. (max 1 page)
+The second part will briefly describe how you fulfilled the major requirements above, especially if they are not obvious. This section is also a place to defend any deviations you made from the requirements. (max 1 page)
+Please continue to use the filenames for the HTML templates to clearly indicate each required page. For example, home.html, list.html, etc.
+
+Since this is a programming project, you should use good software engineering practices. Comment your code, use consistent formatting, use meaningful variable names, etc.
+
+Grading
+This is an individual project. You should create your high-fidelity prototype entirely on your own.
+
+Your project will be graded based on how well it meets the specifications above.
+
+40 pts will be based on the functional requirements of the views and templates
+20 pts will be based on the functional requirements of the sessions: login/logout and access control
+10 pts will be based on the functional requirements of the URL designs
+25 pts will be based on code quality and following the MVC pattern, including comments
+5 pts will be based on documentation in your summary document (PDF)
+Note the due date for the project. Late work will be penalized as described in the syllabus.
+
+Submission
+Please submit the following to Canvas: 
+
+A single .zip file named your-name-your-PID.zip (e.g., john-smith-jsmith.zip) containing your entire Django project, including all Python, HTML, CSS, JS, and image files.
+Your summary document (PDF) outside the .zip file, so we can read it inside Canvas. 

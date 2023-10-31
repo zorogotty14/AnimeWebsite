@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="icon" href="">
+  <link rel="stylesheet" type="text/css" href="../css/login.css">
+  
+</head>
+<body>
+  <!-- login page -->
+<h1 class="net">AnimePlay</h1>
+ <div id="log">
+  <h1>SIGN IN</h1>
+  <form method='post' action='' id='form' target="_self">
+  LOGIN ID :<br><input type='text' id='username' placeholder='username'><br><br>
+  PASSWORD :<br><input type='password' id='password' placeholder='password'><br><br>
+  <input type="button" class="but" value="Login" onclick="submitfrom()"><br> <br>
+ </form>
+<!-- todo make forms work -->
+ </div>
+
+  <div id="log1">
+  <h1>REGISTER</h1>
+  <form method='post' action='pass.php' id='form1'>
+  USERNAME :<br><input type='text' name='id' placeholder='username' id="username1"><br>
+  E-MAIL : <br><input type="E-MAIL" name="mail" placeholder='email' id="mail1"><br>
+  Mobile-no : <br><input type="text" name="phno" placeholder='phno' id="phno1"><br>
+  PASSWORD :<br><input type='password' name='password' placeholder='password' id="password1"><br>
+  CONFIRM PASSWORD:<br><input type='password' name='CNFpassword' placeholder='password' id="cnfpssd"><br>
+  <input type="button" class="but" value="Register" onclick="registerfrom()"><br>
+  <br><br>
+ </form>
+</div>
+</body>
+</html>

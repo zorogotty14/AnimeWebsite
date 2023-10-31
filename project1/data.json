@@ -1,0 +1,116 @@
+{
+    "category":[{
+
+        "series":[
+            {
+                "name":"one piece",
+                "img":"../images/category/one_piece.jpg",
+                "aired": "Date aired : Oct 20, 1999 to ?",
+                "studios": "Toei Animation",
+                "description": "The Pirate King, Gol D. Roger, was renowned as the mightiest and most infamous sailor to navigate the Grand Line. The World Government's apprehension and subsequent execution of Roger prompted a global shift. His final words disclosed the existence of One Piece, the greatest treasure in the world. As a result, the Grand Age of Pirates emerged, with swashbucklers yearning for One Piece's vast riches, fame, and the vaunted title of Pirate King. Monkey D. Luffy, a 17-year-old atypical pirate, enters the fray. Unlike the stereotypical marauder—grizzled, wicked, and ruthless—Luffy seeks pure adventure, relishing the prospect of meeting diverse characters, embarking on wild escapades, and ultimately obtaining the promised treasure. Inspired by his childhood idol, Luffy and his team navigate the Grand Line, encountering strange phenomena, unraveling enigmatic puzzles, and battling formidable foes in their quest for One Piece, the most coveted of all treasures.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"Black Clover",
+                "img":"../images/category/Black_Clover.jpg",
+                "aired": "Date aired : Oct 03, 2017 to Mar 30, 2021",
+                "studios": "Pierrot",
+                "description": "Asta and Yuno were both abandoned as infants at a church, growing up together and dreaming of becoming the Wizard King - the most powerful mage in their kingdom. However, as they matured, their differences became more apparent; Yuno was a natural with magic, while Asta struggled to find the power within himself. At the age of 15, Yuno is given a stunning Grimoire, while Asta is left without. When a stranger named Lebuty targets Yuno to obtain his Grimoire, Asta valiantly attempts to defend his friend, but is overpowered. In the moment of despair, hearing Yuno's voice gives Asta the courage to summon a five-leaf Grimoire, known as the Black Clover, and finally defeat Lebuty. With newfound strength and determination, Asta and Yuno embark on a quest to become the Wizard King.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"Naruto: Shippuden",
+                "img":"../images/category/Naruto_Shippuden.jpg",
+                "aired": "Date aired : Feb 15, 2007 to Mar 23, 2017",
+                "studios": "Pierrot",
+                "description": "Naruto Uzumaki left the Hidden Leaf Village for intense training after an event that fueled his desire to become stronger. Now, two and a half years later, the elite rogue ninja organization Akatsuki is threatening the safety of the shinobi world with their grand plan. Despite the impending danger, Naruto's personality remains largely unchanged, still his rambunctious and childish self, but now more confident and determined to protect his loved ones and home. He will continue to fight for what's important to him, even if it means sacrificing his own body, as his journey to become Hokage continues.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"Boruto: Naruto Next Generations",
+                "img":"../images/category/Boruto_Naruto.jpg",
+                "aired": "Date aired : Apr 05, 2017 to Mar 26, 2023",
+                "studios": "Pierrot",
+                "description": "After the Fourth Shinobi World War came to a successful end, Konohagakure has been relishing in a peaceful era of prosperity and remarkable technological progress. The credit for this goes to the joint efforts of the Allied Shinobi Forces and Naruto Uzumaki, Konohagakure's seasoned Seventh Hokage. With an appearance akin to a modern metropolis, Konohagakure has undergone a significant change, especially for its shinobi. The city's new generation of ninjas is being groomed under the vigilant supervision of Naruto and his old companions. Boruto Uzumaki, the Seventh Hokage's son, draws a lot of attention due to his lineage. Despite inheriting Naruto's dynamic and stubborn personality, Boruto is regarded as a gifted individual who can develop his full potential with the guidance of his loving friends and family. Regrettably, this has also exacerbated his conceit, propelling him to outdo his father, causing friction in their relationship, owing to Naruto's hectic schedule. However, trouble brewing within the village may jeopardize Boruto's carefree life. As a new chapter unfolds, fresh faces and familiar acquaintances join Boruto.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"JUJUTSU KAISEN",
+                "img":"../images/category/JUJUTSU_KAISEN.jpg",
+                "aired": "Date aired : Oct 03, 2020 to Mar 27, 2021",
+                "studios": "MAPPA",
+                "description": "Yuuji Itadori, a high schooler, spends his days indulging in frivolous paranormal activities with the Occult Club while also visiting his sick grandfather at the hospital. However, his leisurely lifestyle takes a strange twist when he unknowingly comes across a cursed object that triggers a series of supernatural events. After swallowing the cursed item, it turns out to be Sukuna Ryoumen's finger, causing him to enter the fearful world of Curses. Yuuji experiences the dangerous nature of these Curses firsthand and gains newfound powers, making him a Jujutsu sorcerer. He finds himself on a path he cannot turn back from at the Tokyo Metropolitan Jujutsu Technical High School.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"Attack on Titan Final Season",
+                "img":"../images/category/Attack_Titan.jpg",
+                "aired": "Date aired : Dec 07, 2020 to Mar 29, 2021",
+                "studios": "MAPPA",
+                "description": "The Scout Regiment has now been on the shoreline for four years, and the world has undergone significant changes. The destiny of the regiment and the individuals of Paradis is now at stake as tension escalates. Unfortunately, Eren is nowhere to be found. Could his reappearance prevent an inevitable war between Marleyans and Eldians, which has been brewing for generations?",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"Bleach",
+                "img":"../images/category/Bleach.jpg",
+                "aired": "Date aired : Oct 05, 2004 to Mar 27, 2012",
+                "studios": "Pierrot",
+                "description": "Despite being an ordinary high school student, Ichigo Kurosaki possesses a unique gift - the power to sense ghosts. This talent had no impact on his life until he encounters Kuchiki Rukia, a Shinigami who saves his family from a twisted spirit known as a Hollow, which devours souls. While battling the creature, Rukia is injured and has no choice but to transfer her Shinigami abilities to Ichigo, enabling him to defeat the beast. Temporarily taking on the role of substitute Shinigami until Rukia heals, Ichigo embarks on a quest to eradicate the Hollows that plague his hometown.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"Hunter_Hunter",
+                "img":"../images/category/Hunter_Hunter.jpg",
+                "aired": "Date aired : Oct 02, 2011 to Sep 24, 2014",
+                "studios": "Madhouse",
+                "description": "From traversing uncharted territories to searching for rare items and battling monsters, Hunters risk their lives to complete dangerous tasks. Only those who pass the Hunter Examination, a grueling selection process where most don't make it out alive, can become a Hunter. For 12-year-old Gon Freecss, the desire to find his father and fellow Hunter, Ging, fuels his ambition to pass the exam. Alongside his newfound friends - medical student Leorio Paladiknight, vengeful Kurapika, and former assassin Killua Zoldyck - they unite with a shared mission to navigate the treacherous world of a Hunter. Although their reasons for undertaking this journey may differ, they continue on together towards their common goal.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"My Hero Academia Season 5",
+                "img":"../images/category/Hero_Academia.jpg",
+                "aired": "Date aired : Mar 27, 2021 to Sep 25, 2021",
+                "studios": "Bones",
+                "description": "The rivalry between Class 1-A and Class 1-B heats up with a joint training battle. Shinso, a specialist in brainwashing, eagerly takes part on both teams in hopes of making it into the hero course. As weaknesses are exposed and new strengths revealed, the result of the conflict is up in the air.",
+                "video": "../video/One_piece.mp4"
+            },
+            {
+                "name":"Tokyo Revengers",
+                "img":"../images/category/Tokyo_Revengers.jpg",
+                "aired": "Date aired : Apr 11, 2021 to Sep 19, 2021",
+                "studios": "LIDENFILMS",
+                "description": "Having hit rock bottom in his life, Takemichi Hanagaki is a freelancer struggling to stay afloat. One day, he discovers that Hinata Tachibana, his middle school girlfriend and the only one he ever had, was brutally murdered by the Tokyo Manji Gang. Overcome with grief and despair, Takemichi finds himself on a train station platform the next day, only to be pushed onto the tracks by a swarm of people. As he braces for the end, his eyes close shut. But when he opens them again, he's traveled back in time by 12 years – to the best days of his life. With a newfound determination to set things right, Takemichi embarks on a mission to save his lost love and become the person he always wanted to be.",
+                "video": "../video/One_piece.mp4"
+            }
+        ],
+        "movies":[
+            {
+                "name":"one piece2",
+                "img":"../images/category/one_piece.jpg",
+                "aired": "Date aired : Oct 20, 1999 to ?",
+                "studios": "Toei Animation",
+                "description": "",
+                "video": "../video/One_piece.mp4"
+            }
+        ],
+        "recent":[
+            {
+                "name":"one piece3",
+                "img":"../images/category/one_piece.jpg",
+                "aired": "Date aired : Oct 20, 1999 to ?",
+                "studios": "Toei Animation"
+            }
+        ],
+        "recomendations":[
+            {
+                "name":"one piece4",
+                "img":"../images/category/one_piece.jpg",
+                "aired": "Date aired : Oct 20, 1999 to ?",
+                "studios": "Toei Animation",
+                "description": "The Pirate King, Gol D. Roger, was renowned as the mightiest and most infamous sailor to navigate the Grand Line. The World Government's apprehension and subsequent execution of Roger prompted a global shift. His final words disclosed the existence of One Piece, the greatest treasure in the world. As a result, the Grand Age of Pirates emerged, with swashbucklers yearning for One Piece's vast riches, fame, and the vaunted title of Pirate King. Monkey D. Luffy, a 17-year-old atypical pirate, enters the fray. Unlike the stereotypical marauder—grizzled, wicked, and ruthless—Luffy seeks pure adventure, relishing the prospect of meeting diverse characters, embarking on wild escapades, and ultimately obtaining the promised treasure. Inspired by his childhood idol, Luffy and his team navigate the Grand Line, encountering strange phenomena, unraveling enigmatic puzzles, and battling formidable foes in their quest for One Piece, the most coveted of all treasures.",
+                "video": "../video/One_piece.mp4"
+            }
+        ]
+    }
+    ]
+}

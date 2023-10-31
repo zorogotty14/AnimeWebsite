@@ -1,0 +1,69 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+        {{ form.as_p }}
+      <input type="text" id="searchInput" name="search_query" placeholder="Search for One Piece...">
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/home.css' %}" />
+<!-- main content for website consists of video playing in loop, card view boxes for each anime -->
+<div class="home-page">
+    <!-- video source is youtube i have downloaded the video -->
+    <video autoplay muted loop class="video" controls="controls" preload="none" onclick="this.play();arguments[0].preventDefault();">
+        <source src="{% static 'AnimePlayApp/video/One_piece.mp4' %}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="content">
+        <h1>One Piece</h1>
+    </div> 
+  </div>
+  <!-- div for card view source W3 website https://www.w3schools.com/ -->
+  <div class="home-page-new-arrivals1">
+    <div class="desc">
+        <h1>WELCOME</h1>
+        <p>Our site gives you the best experiences in entertainment with latest Anime movies and Tv Series</p>
+        <p>Enjoy !!</p>
+      </div>
+    
+  </div>
+
+    {% for category_item in jsonObjects.category %}
+      {% for subcategory, subcategory_data in category_item.items %}
+        <div class="home-page-new-arrivals2">
+            <div class="arrivals">
+            <h1 class="home-h1">{{ subcategory }}</h1>
+            
+              <div class="arrivals_box">
+                {% for content_item in subcategory_data %}
+                    <div class="arrivals_card">
+                        <div class="arrivals_image">
+                            <a href="detail/{{ content_item.name }}"> <img src="{% static content_item.img %}"> </a>
+                        </div>
+                        <br><div class="arrivals_tag">
+                                <h5>{{ content_item.name }}</h5>
+                                <h5>{{ content_item.aired }}</h5>
+                                <h5>Type : {{ subcategory }}</h5>
+                                <h5>Studios: {{ content_item.studios }}</h5> 
+                                {% if request.session.username %}   
+                                <button class="offer-btn">ADD to WatchList</button>
+                                {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            
+            </div>
+        </div>
+      {% endfor %}
+    {% endfor %}
+    
+    <script src="{%static 'AnimePlayApp/js/search.js'%}"></script>
+
+{% endblock content %}

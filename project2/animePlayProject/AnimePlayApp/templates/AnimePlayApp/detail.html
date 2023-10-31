@@ -1,0 +1,52 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      <input type="text" id="searchInput" placeholder="Search for One Piece...">
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/detail.css' %}" />
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/app-header.css' %}" />
+    <div class="category-container">
+        <div class="home-page-new-arrivals">
+            <div class="detail">
+                <h4 class="detailHead">Search Results for "{{ search_query }}"</h4>
+                {% if search_results %}
+                
+                    {% for subcategory, item in search_results  %}
+                    <video autoplay muted loop class="video" controls="controls" preload="none" onclick="this.play();arguments[0].preventDefault();">
+                        <source src="{% static item.video %}" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                
+                <div class="detail_box">
+                        <div class="detail_card">
+                            <div class="detail_image">
+                                <img src="{% static item.img %}">
+                            </div>
+                            <br><div class="detail_tag">
+                                    <h5>{{ item.name }}</h5>
+                                    <h5>{{ item.aired }}</h5>
+                                    <h5>Studios: {{ item.studios }}</h5>
+                                    <h5>{{ item.description }}</h5>
+                                    {% if request.session.username %}
+                                    <button class="offer-btn">Add to watchlist</button> <br>
+                                    {% endif %}
+                            </div>
+                        </div>                    
+                </div>
+                {% endfor%}
+              {% else %}
+                <p>No search results found.</p>
+              {% endif %}
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      <input type="text" name="search_query" id="searchInput" placeholder="Search for One Piece...">
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock search %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/login.css' %}" />
+<div class="category-container">
+    <div class="log">
+        <h1>SIGN IN</h1>
+        <form method="POST">
+            {% csrf_token %}
+            LOGIN ID :<br><input type="text" class="form-control" id="username" name="username"><br><br>
+            PASSWORD :<br><input type="password" id="password" name="password"><br><br>
+            <input class="but" type="submit" name="submit" value="login">
+        </form>
+    </div>
+</div>
+    
+    
+{% endblock %}

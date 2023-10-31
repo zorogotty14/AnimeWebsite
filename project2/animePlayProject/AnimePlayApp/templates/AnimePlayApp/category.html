@@ -1,0 +1,61 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      <input type="text" name="search_query" id="searchInput" placeholder="Search for One Piece...">
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/home.css' %}" />
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/category.css' %}" />
+    <div class="category-container">
+    <!-- filters for the page includes Series, Movies, Recently Added -->
+        <div class="filters">
+        <h2>Filter Options</h2>
+
+        <div class="filter-section">
+            <div class="filter-btn"> <h3>Category</h3>
+            <button class="clear">clear</button></div>
+            <ul>
+                <li><input type="checkbox" class="checkoptionCategory" id="category1" value="tvseries"><label for="category1">Series</label></li>
+                <li><input type="checkbox" class="checkoptionCategory" id="category2"value="movies"><label for="category2">Movies</label></li>
+                <li><input type="checkbox" class="checkoptionCategory" id="category3" value="recent"><label for="category3">Recently Added</label></li>
+            </ul>
+        </div>
+
+        </div>
+    
+        <div class="home-page-new-arrivals2">
+            <div class="arrivals">
+            <h1 class="home-h1">{{ subcategory }}</h1>
+            
+              <div class="arrivals_box">
+                {% for content_item in subcategory_data %}
+                    <div class="arrivals_card">
+                        <div class="arrivals_image">
+                            <a href="detail/{{ content_item.name }}"> <img src="{% static content_item.img %}"> </a>
+                        </div>
+                        <br><div class="arrivals_tag">
+                                <h5>{{ content_item.name }}</h5>
+                                <h5>{{ content_item.aired }}</h5>
+                                <h5>Type : {{ subcategory }}</h5>
+                                <h5>Studios: {{ content_item.studios }}</h5>    
+                                {% if request.session.username %}
+                                <button class="offer-btn">ADD to WatchList</button>
+                                {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'AnimePlayApp/js/checkBox.js' %}"></script>
+{% endblock content %}

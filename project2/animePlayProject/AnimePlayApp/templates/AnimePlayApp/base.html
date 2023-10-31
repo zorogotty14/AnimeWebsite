@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title%}
+
+    <title>AnimePlay - {{ title }}</title>
+    {% else %}
+    <title>AnimePlay</title>
+    {% endif %}
+    <meta charset="utf-8" />
+    <meta name="description" content="AnimePlay, Your Place to watch Anime" />
+
+    <!-- Import font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- style sheet for the websites -->
+    <link rel="stylesheet" href="{% static 'AnimePlayApp/css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'AnimePlayApp/css/app-header.css' %}" />
+    <link rel="stylesheet" href="{% static 'AnimePlayApp/css/app-dropdown.css' %}" />
+    <link rel="stylesheet" href="{% static 'AnimePlayApp/css/app-footer.css' %}" />
+    
+  </head>
+
+  <body>
+    
+    <main>
+      <!-- Header includes logo search bar,profile, watchlist in one row and nav bar in other-->
+      <header class="container">
+        <!-- used wrapper for the div to split top and bottom rows -->
+          <div class="wrapper">
+            <!-- top nav consists of logo, search bar, profile and watchlist this includes font awesome icons -->
+            <div class="top_nav">
+                <div class="left">
+                  <div class="logo"><a href="{% url 'index' %}">
+                    <img
+                      src="{% static 'AnimePlayApp/images/logo/animeplay.png' %}"
+                      alt="animeplay logo"
+                      width="150px"
+                      height="100px"
+                    />
+                  </a>
+                  
+                </div> <br>
+                  {% block search %}
+                  {% endblock %}
+              </div>
+              
+              <div class="right">
+                
+                <ul>
+                  {% if request.session.username %}
+                  <li><a>Hi {{ request.session.username }}!<i class="fa-regular fa-user"></i></a></li>
+                  <li><a href="{% url 'watchlist' %}"><i class="fa-regular fa-heart"></i> watchlist</a></li>
+                  <li><a href="{% url 'logout' %}"><i class="fa-regular fa-user"></i> logout</a></li>
+                  {% else %}
+                  <li><a>Hi Reader!<i class="fa-regular fa-user"></i></a></li>
+                  <li><a href="{% url 'watchlist' %}"><i class="fa-regular fa-heart"></i> watchlist</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+            <!-- nav bar for the website consists of Home, Series, Movies, Recommendations and Recently Added -->
+            <div class="navbar">
+              <a href="{% url 'index' %}">Home</a>
+              <div class="dropdown">
+                <a href="{% url 'series' %}">Series</a>
+              </div>
+              <div class="dropdown">
+                <a href="{% url 'movies' %}">Movies</a>
+              </div>
+              <div class="dropdown">
+                <a href="{% url 'watchlist' %}">My List</a>
+              </div>
+              <div class="dropdown">
+                <a href="{% url 'recommendations'%}">Recommendations</a>
+              </div>
+              <div class="dropdown">
+                <a href="{% url 'recent' %}">Recently Added</a>
+              </div>
+            </div>
+           </div>
+      </header>
+      {% block content%}
+      {% endblock %}
+      <!-- footer of the website consists of about US, Contact US, Directions and icons for facebook, twitter, linkedin, instagram, discord -->
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <div class="footer-nav">
+              <div class="footer-left">
+                <div class="footer-logo"><a href="{% url 'index' %}">
+                  <img
+                    src="{% static 'AnimePlayApp/images/logo/animeplay.png' %}"
+                    alt="animeplay logo"
+                    width="150px"
+                    height="100px"
+                  />
+                </a></div>
+            </div> 
+            <div class="footer-right">
+              <ul>
+                <li><a href="#">About US</a></li>
+                <li><a href="#">Contact US</a></li>
+                <li><a href="#">directions</a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'AnimePlayApp/js/search.js' %}"></script>
+    
+  </body>
+</html>

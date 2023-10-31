@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Bookstore</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="The homepage for My Bookstore" />
+
+    <!-- Import font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- start from the top-level component and work your way down -->
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="stylesheet" href="../css/app-header.css" />
+    <link rel="stylesheet" href="../css/header-dropdown.css" />
+    <link rel="stylesheet" href="../css/app-footer.css" />
+    <link rel="stylesheet" href="../css/category.css" />
+    <link rel="stylesheet" href="../css/watchlist-list.css" />
+  </head>
+
+  <body>
+    <main>
+        <header class="container">
+            <div class="wrapper">
+              <div class="top_nav">
+                  <div class="left">
+                    <div class="logo"><a href="index.html">
+                      <img
+                        src="../images/logo/animeplay.png"
+                        alt="animeplay logo"
+                        width="150px"
+                        height="100px"
+                      />
+                    </a></div>
+                    <form action="movie-detail.html" method="get">
+                      <div class="search_bar">
+                        <input type="text" id="searchInput" placeholder="Search for One Piece...">
+                        <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      </div>
+                    </form>
+                </div> 
+                <div class="right">
+                  
+                  <ul>
+                    <li><a>Hi Reader!<i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-heart"></i> watchlist</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="navbar">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                  <a href="series.html">Series</a>
+                </div>
+                <div class="dropdown">
+                  <a href="movies.html">Movies</a>
+                </div>
+                <div class="dropdown">
+                  <a href="watchlist.html">My List</a>
+                </div>
+                <div class="dropdown">
+                  <a href="recommendations.html">Recommendations</a>
+                </div>
+                <div class="dropdown">
+                  <a href="recent.html">Recently Added</a>
+                </div>
+              </div>
+             </div>
+        </header>
+      <div class="category-container">
+        <div class="home-page-new-arrivals">
+            <div class="watchlist">
+              <h4>WatchList</h4>
+      
+              <div class="watchlist_box">
+      
+                    <div class="watchlist_card">
+                        <div class="watchlist_image">
+                            <img src="../images/category/The_summer.jpg">
+                        </div>
+                        <br><div class="watchlist_tag">
+                                <h5>The Summer</h5>
+                                <h5>Date aired : Jun 06, 2023</h5>
+                                <h5>Type : Movies</h5>
+                                <h5>Studios: Red Dog Culture House</h5>
+                                <h5>Desc: The 61-minute long movie follows the life of 18-year-old Yi-gyeong (Yoon Ah-Young), a quiet, ordinary student who meets Suyi (Song Harim), an athletic girl who stirs up new romantic feelings in her, causing her to realize her identity. Over the next two years, their relationship helps both women grow, but ironically, because of this development, Yi-gyeong realizes her thoughts about Suyi have begun to change.</h5>
+
+                        </div>
+                    </div>
+                    <div class="watchlist_card">
+                        <div class="watchlist_image">
+                            <img src="../images/category/one_piece.jpg">
+                        </div>
+                        <br><div class="watchlist_tag">
+                            <h5>ONE PIECE</h5>
+                            <h5>Date aired : Oct 20, 1999 to ?</h5>
+                            <h5>Type : TV</h5>
+                            <h5>Studios: Toei Animation</h5>
+                            <h5>The "Pirate King," Gol D. Roger, was renowned as the mightiest and most infamous sailor to navigate the Grand Line. The World Government's apprehension and subsequent execution of Roger prompted a global shift. His final words disclosed the existence of One Piece, the greatest treasure in the world. As a result, the Grand Age of Pirates emerged, with swashbucklers yearning for One Piece's vast riches, fame, and the vaunted title of Pirate King. Monkey D. Luffy, a 17-year-old atypical pirate, enters the fray. Unlike the stereotypical marauder—grizzled, wicked, and ruthless—Luffy seeks pure adventure, relishing the prospect of meeting diverse characters, embarking on wild escapades, and ultimately obtaining the promised treasure. Inspired by his childhood idol, Luffy and his team navigate the Grand Line, encountering strange phenomena, unraveling enigmatic puzzles, and battling formidable foes in their quest for One Piece, the most coveted of all treasures.</h5>
+                        </div>
+                    </div>
+                    <div class="watchlist_card">
+                        <div class="watchlist_image">
+                            <img src="../images/category/JUJUTSU_KAISEN.jpg">
+                        </div>
+                        <br><div class="watchlist_tag">
+                                <h5>JUJUTSU KAISEN</h5>
+                                <h5>Date aired : Oct 03, 2020 to Mar 27, 2021</h5>
+                                <h5>Type : TV</h5>
+                                <h5>Studios: MAPPA</h5>
+                                <h5>Yuuji Itadori, a high schooler, spends his days indulging in frivolous paranormal activities with the Occult Club while also visiting his sick grandfather at the hospital. However, his leisurely lifestyle takes a strange twist when he unknowingly comes across a cursed object that triggers a series of supernatural events. After swallowing the cursed item, it turns out to be Sukuna Ryoumen's finger, causing him to enter the fearful world of Curses. Yuuji experiences the dangerous nature of these Curses firsthand and gains newfound powers, making him a Jujutsu sorcerer. He finds himself on a path he cannot turn back from at the Tokyo Metropolitan Jujutsu Technical High School.</h5>
+
+                        </div>
+                    </div>
+                    
+              </div>
+      
+            </div>
+        </div>
+        <div class="home-page-new-arrivals">
+            <div class="arrivals">
+              <h4>Recommendations</h4>
+      
+              <div class="arrivals_box">
+      
+        
+                    
+              </div>
+      
+            </div>
+        </div>
+        
+      </div>
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <div class="footer-nav">
+              <div class="footer-left">
+                <div class="footer-bookstore-logo"><a href="index.html">
+                  <img
+                    src="../images/logo/animeplay.png"
+                    alt="Prime Books logo"
+                    width="150px"
+                    height="100px"
+                  />
+                </a></div>
+            </div> 
+            <div class="footer-right">
+              <ul>
+                <li><a href="#">About US</a></li>
+                <li><a href="#">Contact US</a></li>
+                <li><a href="#">directions</a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/loadjson.js"></script>
+    <script src="../js/loadPage.js"></script>
+  </body>
+  
+</html>

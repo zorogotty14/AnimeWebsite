@@ -1,0 +1,96 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      <input type="text" id="searchInput" placeholder="Search for One Piece...">
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/category.css' %}" />
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/watchlist-list.css' %}" />
+    <div class="category-container">
+    <!-- filters for the page includes Series, Movies, Recently Added -->
+        <div class="home-page-new-arrivals">
+            <div class="watchlist">
+                <h4>WatchList</h4>
+        
+                <div class="watchlist_box">
+        
+                    <div class="watchlist_card">
+                        <div class="watchlist_image">
+                            <img src="{% static 'AnimePlayApp/images/category/The_summer.jpg' %}">
+                        </div>
+                        <br><div class="watchlist_tag">
+                                <h5>The Summer</h5>
+                                <h5>Date aired : Jun 06, 2023</h5>
+                                <h5>Type : Movies</h5>
+                                <h5>Studios: Red Dog Culture House</h5>
+                                <h5>Desc: The 61-minute long movie follows the life of 18-year-old Yi-gyeong (Yoon Ah-Young), a quiet, ordinary student who meets Suyi (Song Harim), an athletic girl who stirs up new romantic feelings in her, causing her to realize her identity. Over the next two years, their relationship helps both women grow, but ironically, because of this development, Yi-gyeong realizes her thoughts about Suyi have begun to change.</h5>
+                                <button class="offer-btn">remove to WatchList</button>
+                        </div>
+                    </div>
+                    <div class="watchlist_card">
+                        <div class="watchlist_image">
+                            <img src="{% static 'AnimePlayApp/images/category/one_piece.jpg' %}">
+                        </div>
+                        <br><div class="watchlist_tag">
+                            <h5>ONE PIECE</h5>
+                            <h5>Date aired : Oct 20, 1999 to ?</h5>
+                            <h5>Type : TV</h5>
+                            <h5>Studios: Toei Animation</h5>
+                            <h5>The "Pirate King," Gol D. Roger, was renowned as the mightiest and most infamous sailor to navigate the Grand Line. The World Government's apprehension and subsequent execution of Roger prompted a global shift. His final words disclosed the existence of One Piece, the greatest treasure in the world. As a result, the Grand Age of Pirates emerged, with swashbucklers yearning for One Piece's vast riches, fame, and the vaunted title of Pirate King. Monkey D. Luffy, a 17-year-old atypical pirate, enters the fray. Unlike the stereotypical marauder—grizzled, wicked, and ruthless—Luffy seeks pure adventure, relishing the prospect of meeting diverse characters, embarking on wild escapades, and ultimately obtaining the promised treasure. Inspired by his childhood idol, Luffy and his team navigate the Grand Line, encountering strange phenomena, unraveling enigmatic puzzles, and battling formidable foes in their quest for One Piece, the most coveted of all treasures.</h5>
+                            <button class="offer-btn">remove to WatchList</button>
+                        </div>
+                    </div>
+                    <div class="watchlist_card">
+                        <div class="watchlist_image">
+                            <img src="{% static 'AnimePlayApp/images/category/JUJUTSU_KAISEN.jpg' %}">
+                        </div>
+                        <br><div class="watchlist_tag">
+                                <h5>JUJUTSU KAISEN</h5>
+                                <h5>Date aired : Oct 03, 2020 to Mar 27, 2021</h5>
+                                <h5>Type : TV</h5>
+                                <h5>Studios: MAPPA</h5>
+                                <h5>Yuuji Itadori, a high schooler, spends his days indulging in frivolous paranormal activities with the Occult Club while also visiting his sick grandfather at the hospital. However, his leisurely lifestyle takes a strange twist when he unknowingly comes across a cursed object that triggers a series of supernatural events. After swallowing the cursed item, it turns out to be Sukuna Ryoumen's finger, causing him to enter the fearful world of Curses. Yuuji experiences the dangerous nature of these Curses firsthand and gains newfound powers, making him a Jujutsu sorcerer. He finds himself on a path he cannot turn back from at the Tokyo Metropolitan Jujutsu Technical High School.</h5>
+                                <button class="offer-btn">remove to WatchList</button>
+        
+                        </div>
+                    </div>
+                    
+                </div>
+        
+            </div>
+        </div>
+    
+    
+        <div class="home-page-new-arrivals">
+            <div class="arrivals">
+            <h1 class="home-h1">{{ subcategory }}</h1>
+            
+              <div class="arrivals_box">
+                {% for content_item in subcategory_data %}
+                    <div class="arrivals_card">
+                        <div class="arrivals_image">
+                            <a href="/{{ content_item.name }}"> <img src="{% static content_item.img %}"> </a>
+                        </div>
+                        <br><div class="arrivals_tag">
+                                <h5>{{ content_item.name }}</h5>
+                                <h5>{{ content_item.aired }}</h5>
+                                <h5>Studios: {{ content_item.studios }}</h5>    
+                                {% if request.session.username %}
+                                <button class="offer-btn">ADD to WatchList</button>
+                                {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            
+            </div>
+        </div>
+    </div>
+{% endblock content %}
