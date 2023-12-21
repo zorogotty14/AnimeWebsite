@@ -1,0 +1,35 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'AnimePlayApp:search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      {{ form.search_query }}
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock search %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/login.css' %}" />
+<div class="category-container">
+    <div class="log">
+                <h1>Add Anime to Website</h1>
+                <form method="POST" action="{% url 'AnimePlayApp:anime_add' %}">
+                {% csrf_token %}
+                Name :<br><input type="text" class="form-control" id="Name" name="Name" placeholder="Name of Anime"><br><br>
+                Aired :<br><input type="text" class="form-control" id="Aired" name="Aired" placeholder="Date aired : ?"><br><br>
+                Studios :<br><input type="text" class="form-control" id="Studios" name="Studios" placeholder="Studios"><br><br>
+                Description :<br><input type="text" class="form-control" id="Description" name="Description" placeholder="Description"><br><br>
+                Type :<br><input type="text" class="form-control" id="Type" name="Type" placeholder="Type"><br><br>
+                Video :<br><input type="text" class="form-control" id="Video" name="Video" placeholder="Path to Video"><br><br>
+                Image :<br><input type="text" class="form-control" id="Image" name="Image" placeholder="Path to Image"><br><br>
+                <input class="but" type="submit" name="submit" value="Add Anime">
+                <br>
+                </form>
+    </div>
+</div>
+
+
+{% endblock %}

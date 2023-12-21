@@ -1,0 +1,32 @@
+{% extends "AnimePlayApp/base.html" %}
+
+{% load static %}
+
+{% block search %}
+<form action="{% url 'AnimePlayApp:search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      {{ searchform.search_query }}
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/login.css' %}" />
+    <div class="category-container">
+        <div class="log">
+            <h1>Register</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <input class="but" type="submit" name="submit" value="Register">
+                Already Have account?  <a class="but" href="{% url 'AnimePlayApp:login' %}">login</a>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{%static 'AnimePlayApp/js/search.js'%}"></script>
+    <script src="{%static 'AnimePlayApp/js/buttons.js'%}"></script>
+{% endblock %}

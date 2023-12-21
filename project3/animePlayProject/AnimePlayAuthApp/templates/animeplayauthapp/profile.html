@@ -1,0 +1,56 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block search %}
+<form action="{% url 'AnimePlayApp:search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      {{ form.search_query }}
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/detail.css' %}" />
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/app-header.css' %}" />
+    <div class="category-container">
+        <div class="home-page-new-arrivals">
+            <div class="detail">
+                    <div class="detail_box">
+                            <div class="detail_card">
+                                <div class="butns-list" style="background-color: aqua; width:100%">
+                                        <div class="butns-list-left" style="float: left; width:50%;margin-top: 30px; margin-bottom: 30px">
+                                            <button class="offer-btn" id="editProfile" data-edit-proile-url="{%  url 'profile_edit' user.username %}" value="{{ user.username }}">Edit Profile</button> <br>
+                                        </div>
+                                    <form action="{% url 'AnimePlayApp:profile_del' user.username %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="butns-list-left" style="float: left;width:50%;margin-top: 30px; margin-bottom: 30px">
+                                                <button class="offer-btn" id="delProfile" value="{{ user.username }}">Delete Profile</button> <br>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="detail_image">
+                                    <img src="{% static user.details.profile_pic %}">
+                                </div>
+                                <br><div class="detail_tag">
+                                        <h5>Username: {{ user.username }}</h5>
+                                        <h5>Email: {{ user.email }}</h5>
+                                        <h5>FirstName: {{ user.first_name }}</h5>
+                                        <h5>LastName: {{ user.last_name }}</h5>
+                                        <h5>Role: {{ user.details.role }}</h5><br>
+                                        <h1> Recent Activity</h1>
+                                        {% for activity in activities %}
+                                        <h5> <a href="{% url 'AnimePlayApp:profile' user.username  %}">{{ activity.user }}</a> {{ activity.verb }} <a href="{{ activity.get_absolute_url }}">{{ activity.target }}</a> {{ activity.created|naturaltime }}</h5>
+                                        {% endfor %}
+                                </div>
+                            </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{%static 'AnimePlayApp/js/search.js'%}"></script>
+    <script src="{%static 'AnimePlayApp/js/buttons.js'%}"></script>
+{% endblock content %}

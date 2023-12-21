@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Mountains+of+Christmas&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+
+.wrapper .top_nav{
+  margin-top: 5px;
+  width: 100%;
+  height: 65px;
+  background: #fff;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .top_nav .left{
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+}
+
+.wrapper .top_nav .left .logo {
+  min-width: 100px;
+  min-height: 100px;
+  height: 100px;
+  width: 100px;
+  padding-right: 10px;
+}
+
+.search_bar input[type="text"]{
+  border: 1px solid #666666;
+  outline: none;
+  width: 350px;
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+
+.wrapper .top_nav .right ul{
+  display: flex;
+}
+
+.wrapper .top_nav .right ul li{
+  margin-right: 0;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: #333;;
+}
+
+.wrapper .top_nav .right ul li:hover{
+  background-color: red
+}
+
+.wrapper .top_nav .right ul li a{
+  display: block;
+  padding: 8px 10px;
+  color: #f9f9f9;
+}
+
+.wrapper .bottom_nav{
+  width: 100%;
+  background: #f9f9f9;
+  height: 45px;
+  padding: 0 50px;
+}
+
+.wrapper .bottom_nav ul{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .bottom_nav ul li a{
+  color: #494949;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.wrapper .banner img{
+  width: 100%;
+  height: 400px;
+}
+
+ul.messages{
+  font-weight: bold;
+  padding: 1em;
+}
+ul.messages li.success {
+  background-color: lightgreen;
+  padding: 1em;
+  align-content: center;
+}
+ul.messages li.error {
+  background-color: lightcoral;
+  padding: 1em;
+  align-content: center;
+}
+
+ul.messages li.info {
+  background-color: lightblue;
+  padding: 1em;
+  align-content: center;
+}
+
+ul.messages li.warning {
+  background-color: lightcoral;
+  padding: 1em;
+  align-content: center;
+}
+
+@media (max-width: 1000px) {
+
+  .wrapper .top_nav .left .search_bar input[type="text"]{
+    margin-right: 25px;
+    width: 200px;
+  }
+  
+}
+@media (max-width: 850px) {
+
+  .wrapper .top_nav .left .search_bar input[type="text"]{
+    margin-right: 10px;
+    width: 50px;
+  }
+  
+}

@@ -1,0 +1,80 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block search %}
+<form action="{% url 'AnimePlayApp:search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+        {{ form.search_query }}
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/home.css' %}" />
+<!-- main content for website consists of video playing in loop, card view boxes for each anime -->
+<div class="home-page">
+    <!-- video source is youtube i have downloaded the video -->
+    <video autoplay muted loop class="video" controls="controls" preload="none" onclick="this.play();arguments[0].preventDefault();">
+        <source src="{% static 'AnimePlayApp/video/One_piece.mp4' %}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="content">
+        <h1>One Piece</h1>
+    </div> 
+  </div>
+  <!-- div for card view source W3 website https://www.w3schools.com/ -->
+  <div class="home-page-new-arrivals1">
+    <div class="desc">
+        <h1>WELCOME</h1>
+        <p>Our site gives you the best experiences in entertainment with latest Anime movies and Tv Series</p>
+        <p>Enjoy !!</p>
+        <button class="offer-btn" id="addAnimebtn">ADD Anime to Website</button>
+    </div>
+    <div class="desc">
+        <h1>Recent Activity</h1>
+        {% for activity in activities %}
+        <h5> <a href="{% url 'AnimePlayApp:profile' user.username  %}">{{ activity.user }}</a> {{ activity.verb }} <a href="{{ activity.get_absolute_url }}">URL</a> {{ activity.created|naturaltime }}</h5>
+        {% endfor %}
+    </div>
+  </div>
+
+
+        <div class="home-page-new-arrivals2">
+            {% for subcategory in list_category %}
+            <div class="arrivals">
+
+            <h1 class="home-h1">{{ subcategory.type }}</h1>
+
+                  <div class="arrivals_box">
+                      {% for category_item in list_anime %}
+                        {% if category_item.type == subcategory.type %}
+                        <div class="arrivals_card">
+                            <div class="arrivals_image">
+                                <a href="detail/{{ category_item.id }}"> <img src="{% static category_item.img %}"> </a>
+                            </div>
+                            <br><div class="arrivals_tag">
+                                    <h5>{{ category_item.name }}</h5>
+                                    <h5>{{ category_item.aired }}</h5>
+                                    <h5>Type : {{ category_item.type }}</h5>
+                                    <h5>Studios: {{ category_item.studios }}</h5>
+                                    {% if request.session.username %}
+                                    <button class="offer-btn"><a href="{% url 'AnimePlayApp:watchlist_add' category_item.id %}">Add to Watchlist</a></button>
+                                    {% endif %}
+                            </div>
+                        </div>
+                        {%  endif %}
+                      {% endfor %}
+                  </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{%static 'AnimePlayApp/js/buttons.js'%}"></script>
+    <script src="{%static 'AnimePlayApp/js/search.js'%}"></script>
+
+
+
+{% endblock content %}

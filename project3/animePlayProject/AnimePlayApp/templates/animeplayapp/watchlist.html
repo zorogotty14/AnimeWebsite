@@ -1,0 +1,81 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'AnimePlayApp:search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      {{ form.search_query }}
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/category.css' %}" />
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/watchlist-list.css' %}" />
+    <div class="category-container">
+    <!-- filters for the page includes Series, Movies, Recently Added -->
+
+        <div class="home-page-new-arrivals">
+            <div class="watchlist">
+                <h4>WatchList</h4>
+
+                <div class="watchlist_box">
+                    {% for watchlist_items in list_watchlist %}
+                    <div class="watchlist_card">
+                        <div class="watchlist_image">
+                            <img src="{% static watchlist_items.img %}" alt="{{ watchlist_items.name }}">
+                        </div>
+                        <br><div class="watchlist_tag">
+                                <h5>Name:{{ watchlist_items.name }}</h5>
+                                <h5>{{ watchlist_items.aired }}</h5>
+                                <h5>Type : {{ watchlist_items.type }}</h5>
+                                <h5>Studios: {{ watchlist_items.studios }}</h5>
+                                <h5>Desc: {{ watchlist_items.description }}</h5>
+                                <form action="{% url 'AnimePlayApp:watchlist_delete' watchlist_items.id  %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="offer-btn">Remove from Watchlist</button>
+                                </form>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div>
+                        <h1> You dont have any anime in watchlist please add</h1>
+                    </div>
+                {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+    
+    
+        <div class="home-page-new-arrivals">
+            <div class="arrivals">
+            <h1 class="home-h1">Recommendations</h1>
+            
+              <div class="arrivals_box">
+                {% for content_item in list_anime %}
+                    <div class="arrivals_card">
+                        <div class="arrivals_image">
+                            <img src="{% static content_item.img %}">
+                        </div>
+                        <br><div class="arrivals_tag">
+                                <h5>{{ content_item.name }}</h5>
+                                <h5>{{ content_item.aired }}</h5>
+                                <h5>Studios: {{ content_item.studios }}</h5>    
+                                {% if request.session.username %}
+                                <button class="offer-btn"><a href="{% url 'AnimePlayApp:watchlist_add' content_item.id %}">Add to Watchlist</a></button>
+                                {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{%static 'AnimePlayApp/js/search.js'%}"></script>
+    <script src="{%static 'AnimePlayApp/js/buttons.js'%}"></script>
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends "AnimePlayApp/base.html" %}
+
+{% load static %}
+
+{% block search %}
+<form action="{% url 'AnimePlayApp:search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      {{ form.search_query }}
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/login.css' %}" />
+    <div class="category-container">
+        <div class="log">
+            <h1>Edit Profile</h1>
+                {% if request.user.is_superuser %}
+                <form method="POST">
+                    {% csrf_token %}
+                    E-MAIL : <br><input type="E-MAIL" name="email" placeholder='email' id="mail1" value="{{ users_profile.email }}"><br>
+                    FirstName : <br><input type="text" name="firstname" placeholder='firstname' value="{{ users_profile.first_name }}"><br>
+                    LastName : <br><input type="text" name="lastname" placeholder='lastname' value="{{ users_profile.last_name }}"><br>
+                    Role: <br><input type="text" name="role" placeholder='role' value="{{ users_profile.details.role }}"><br>
+                    <input class="but" type="submit" name="submit" value="Edit Profile">
+                </form>
+                {% else %}
+                <form method="POST">
+                    {% csrf_token %}
+                    E-MAIL : <br><input type="E-MAIL" name="email" placeholder='email' id="mail1" value="{{ users_profile.email }}"><br>
+                    FirstName : <br><input type="text" name="firstname" placeholder='firstname' value="{{ users_profile.first_name }}"><br>
+                    LastName : <br><input type="text" name="lastname" placeholder='lastname' value="{{ users_profile.last_name }}"><br>
+                    <input class="but" type="submit" name="submit" value="Edit Profile">
+                </form>
+                {% endif %}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{%static 'AnimePlayApp/js/search.js'%}"></script>
+    <script src="{%static 'AnimePlayApp/js/buttons.js'%}"></script>
+{% endblock %}

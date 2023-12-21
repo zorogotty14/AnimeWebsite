@@ -1,0 +1,85 @@
+{% extends "AnimePlayApp/base.html" %}
+{% load static %}
+
+{% block search %}
+<form action="{% url 'AnimePlayApp:search'%}" method="post">
+    <div class="search_bar">
+        {% csrf_token %}
+      {{ form.search_query }}
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</form>
+{% endblock%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/home.css' %}" />
+<link rel="stylesheet" href="{% static 'AnimePlayApp/css/category.css' %}" />
+    <div class="category-container">
+    <!-- filters for the page includes Series, Movies, Recently Added -->
+        <div class="filters">
+        <h2>Filter Options</h2>
+
+        <div class="filter-section">
+            <div class="filter-btn"> <h3>Category</h3>
+            <button class="clear">clear</button></div>
+            <ul>
+                <li><input type="checkbox" class="checkoptionCategory" id="category1" value="tvseries"><label for="category1">Series</label></li>
+                <li><input type="checkbox" class="checkoptionCategory" id="category2" value="movies"><label for="category2">Movies</label></li>
+                <li><input type="checkbox" class="checkoptionCategory" id="category3" value="recent"><label for="category3">Recently Added</label></li>
+            </ul>
+            <ul>
+                <li><button class="offer-btn" id="sortNameASC" value="{{ subcategory }}">Sort by Name Ascending</button></li>
+                <li><button class="offer-btn" id="sortNameDESC" value="{{ subcategory }}">Sort by Name Descending</button></li>
+            </ul>
+        </div>
+
+        </div>
+    
+        <div class="home-page-new-arrivals2">
+            <div class="arrivals">
+            <h1 class="home-h1">{{ subcategory }}</h1>
+              <div class="arrivals_box">
+                {% for content_item in list_anime %}
+                    <div class="arrivals_card">
+                        <div class="arrivals_image">
+                            <a href="detail/{{ content_item.id }}"> <img src="{% static content_item.img %}"> </a>
+                        </div>
+                        <br><div class="arrivals_tag">
+                                <h5>{{ content_item.name }}</h5>
+                                <h5>{{ content_item.aired }}</h5>
+                                <h5>Type : {{ content_item.type }}</h5>
+                                <h5>Studios: {{ content_item.studios }}</h5>    
+                                {% if request.session.username %}
+
+                                    <button class="offer-btn"> <a href="{% url 'AnimePlayApp:watchlist_add' content_item.id %}">Add to Watchlist</a></button> <br>
+
+                                {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            <h1>Related searches for {{ subcategory }} category: </h1>
+            <div class="arrivals_box">
+                {% for results in response %}
+                    <div class="arrivals_card">
+                        <div class="arrivals_image1">
+                            <a href="{{ results.myanimelist_url }}"> <img src="{{ results.picture_url }}"> </a>
+                        </div>
+                        <br><div class="arrivals_tag">
+                                <h5>{{ results.title }}</h5>
+                                <h5>Rank: {{ results.rank }}</h5>
+                                <h5>Score: {{ results.score }}</h5>
+                                <h5>Type : {{ results.type }}</h5>
+                                <h5>Aired_on: {{ results.aired_on }}</h5>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'AnimePlayApp/js/checkBox.js' %}"></script>
+    <script src="{%static 'AnimePlayApp/js/buttons.js'%}"></script>
+{% endblock content %}
