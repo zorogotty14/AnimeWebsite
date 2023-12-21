@@ -1,0 +1,67 @@
+Project 5
+• Demonstrated separation of model, view, controller (MVC) in a AnimePlay project, consists of 2 django apps, AnimePlayApp, AnimePlayAuthApp , auth app is for login and register pages, after login is complete the user will be taken to index page which has dynamically loaded content from database.
+• Database consists of AnimePlay_Anime, AnimePlay_Category, AnimePlay_Watchlist, Auth_user.
+• Anime has Name, aired, studios, description, video,image,Type. Category has Type – values are recent, series, movies, recommendations. Watchlist is has Anime, user_id, username. Auth_user has username, user_id, password, email.
+• Have used Django messaging frameworks to display the messages like edited anime, delete anime, added anime to DB and user login and register.
+• Used Django forms to check the forms generated.
+• URLS added newly path('addanime/', views.anime_add, name='anime_add'), path('editanime/<str:search_query>/', views.anime_edit, name='anime_edit'), path('deleteanime/<str:search_query>/', views.anime_delete, name='anime_delete'), path('sorted_list/<str:category_id>/<str:order_type>', views.sorted_list, name='sorted_list'), path('watchlist/<str:anime_id>', views.watchlist_add, name='watchlist_add'), path('watchlist/remove/<str:anime_id>', views.watchlist_delete, name='watchlist_delete'),
+• Add anime will redirect to addanime.html which is form to create new anime to database.
+• Edit anime will redirect to editanime.html which is form to edit existing anime from database.
+• Delete anime will delete the existing anime from database.
+• Add to watchlist will add anime to user watchlist, which is displayed in mylist view.
+• Sorted_list will display the category page either sorted ascending or descending based on button clicks.
+• Detail view page has edit and delete button, which will edit or delete the anime seleted. Add anime button is in index page which will load form to add the anime.
+• I have used ajax to load the page content on click.
+• User can add to watchlist and remove from watchlist as expected.
+• User can login or create a account to visit the site.
+• Admin User: abcd, password: Test1234@, it is given admin access for now all user can add and delete anime, I will try to implement user access differently in coming projects.
+• Filters in category page works fine, it is checkbox on click of checkbox page will be redirected to corresponding category of user selection.
+
+Demonstrated separation of model, view, controller (MVC) in a AnimePlay
+project, consists of 3 django apps, AnimePlayApp, AnimePlayAuthApp , AnimePlayActionsApp, auth app is for login and register pages, after login is complete the user will be
+taken to index page which has dynamically loaded content from database.
+• Database consists of AnimePlay_Anime, AnimePlay_Category,
+AnimePlay_Watchlist, Auth_user. AnimePlayApp_comment, AnimePlayActionsApp_actions
+• Anime has Name, aired, studios, description, video,image,Type.
+Category has Type – values are recent, series, movies, recommendations.
+Watchlist has Anime, user_id, username. Auth_user has username, user_id, password, email.
+Comments has name,email,content,anime_id, time and details required to display MTTP
+• Have used Django messaging frameworks to display the messages like edited
+anime, delete anime, added anime to DB and user login and register.
+• Used Django forms to check the forms validations
+• Add anime will redirect to addanime.html which is form to create new anime to
+database.
+• Edit anime will redirect to edit anime Page through which you can edit the anime
+Created multiple types of user accounts with different permissions
+User can click on register and it will create new user accounts, forms are validated, user need to provide
+username, email address, password.
+By default the role of user is regular
+Once user is created, it will authenticate him and take him to index page which shows a list of anime
+Create profile pages for all users
+User can visit the profile page, by clicking on the name of the user at the top right of the page,
+User can edit the profile, can change email, firstname, lastname.
+Users can add, edit and delete their own comments, add new anime
+While admin can add, edit, delete the comments, profile, anime.
+Admin can change the role of any users. You can access all the user by changing the url to corresponding
+username.
+Admin can edit, delete all the users details.
+Admin username: abcd, password: text1234@
+Regular user: test1, test1234
+Create activity feeds logging user actions
+User can see activity streams, on index page or on profile page, on index page all the activity streams will
+be visible, on profile page activity performed by the user is displayed.
+User can click on others username in activity stream and it will take you to username of that specific
+User, URL for the activity stream works
+Enable user comments on items
+Comments have been enabled in detail anime page for each individual anime.
+It has a form through which users can add comments to each anime, I have made a tree using Django
+MPTT, which makes the comments recurse in a tree format.
+User can edit, reply and delete their comments, Admin has access to edit, reply and delete all comments.
+Crowd sourcing: I am using the https://rapidapi.com/felixeschmittfes/api/myanimelist from this I am using the following apis, get search items, get top anime for movies, tv series, by popularity, upcoming, recommendations.
+This webservice takes users input and gives respected output which we are consuming.
+It searches the anime gets the similar items and uses recommendation engine to suggest other anime as well.
+It will enhance my webpage by providing related items in the page, though I cannot add it to my database due to difference in data provided. I have implemented search which will be directed to search page, which takes user inputs and give output from the database and it searches the rapidapi site and gives specific related items for the specific search item.
+In all category pages, I have implemented related anime by rank for the specific category.
+In detail anime page, I have implemented recommended anime for that anime.
+Rate limiting is also taken care of using from django_ratelimit.decorators import ratelimit
+API requests errors are also handled by giving friendly error messages.
